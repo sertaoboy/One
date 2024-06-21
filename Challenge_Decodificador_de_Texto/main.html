@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Decodificador de Texto</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>Decodificador de Texto</h1>
+        <form action="main.html" method="post">
+            <label for="text">Letras maiúsculas e caracteres especiais não serão aceitos!</label>
+            <br>
+            <label for="text">Texto:</label>
+            <input type="text" name="text" id="text" required>
+            <input type="button" value="Codificar" onclick="codificar()">
+            <input type="button" value="Decodificar" onclick="decodificar()">
+        </form>
+        <div id="resultado"></div>
+        <button onclick="copiarTexto()">Copiar</button>
+        <script>
+            function codificar(){
+                var texto = document.getElementById("text").value;
+                var textoCodificado = "Texto codificado: " + texto.split("").reverse().join("");
+                var div = document.getElementById("resultado");
+                div.innerHTML = textoCodificado;
+                div.style.backgroundColor = "lightblue"; // Alterando a cor de fundo para codificar
+            }
+
+            function decodificar(){
+                var texto = document.getElementById("text").value;
+                var textoDecodificado = "Texto decodificado: " + texto.split("").reverse().join("");
+                var div = document.getElementById("resultado");
+                div.innerHTML = textoDecodificado;
+                div.style.backgroundColor = "lightgreen"; // Alterando a cor de fundo para decodificar
+            }
+
+            function copiarTexto() {
+                var textoParaCopiar = document.getElementById("resultado").innerText;
+                navigator.clipboard.writeText(textoParaCopiar).then(function() {
+                    alert("Texto copiado com sucesso!");
+                }, function(err) {
+                    console.error('Erro ao copiar texto: ', err);
+                });
+            }
+        </script>
+        <footer>
+            <p> Raul H. 2024</p>
+        </footer>
+    </body>
+</html>
