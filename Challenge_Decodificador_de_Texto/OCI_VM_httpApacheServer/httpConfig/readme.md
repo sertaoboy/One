@@ -1,0 +1,11 @@
+# Configuracao do servidor Apache no CentOS (OCI)
+- apos acessar a vm atraves de SSH, realizar a instalacao do Apache:
+  - > sudo yum install httpd -y <br>
+- navegar ate a pasta do Apache:
+  - > cd /var/www/html <br>
+- configurar o `firewall-cmd` para permitir listening na porta 80/tcp
+  - > sudo firewall-cmd --permanent --add-port=80/tcc <br>
+- iniciar o servico `httpd` atreves do systemd:
+  - > sudo systemctl start httpd <br>
+- testar no navegador:
+  - > `<ip>:8080`
