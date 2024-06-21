@@ -1,48 +1,112 @@
 <html>
-    <head>
-        <title>Decodificador de Texto</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <h1>Decodificador de Texto</h1>
-        <form action="main.html" method="post">
-            <label for="text">Letras maiúsculas e caracteres especiais não serão aceitos!</label>
-            <br>
-            <label for="text">Texto:</label>
-            <input type="text" name="text" id="text" required>
-            <input type="button" value="Codificar" onclick="codificar()">
-            <input type="button" value="Decodificar" onclick="decodificar()">
-        </form>
-        <div id="resultado"></div>
-        <button onclick="copiarTexto()">Copiar</button>
-        <script>
-            function codificar(){
-                var texto = document.getElementById("text").value;
-                var textoCodificado = "Texto codificado: " + texto.split("").reverse().join("");
-                var div = document.getElementById("resultado");
-                div.innerHTML = textoCodificado;
-                div.style.backgroundColor = "lightblue"; // Alterando a cor de fundo para codificar
-            }
 
-            function decodificar(){
-                var texto = document.getElementById("text").value;
-                var textoDecodificado = "Texto decodificado: " + texto.split("").reverse().join("");
-                var div = document.getElementById("resultado");
-                div.innerHTML = textoDecodificado;
-                div.style.backgroundColor = "lightgreen"; // Alterando a cor de fundo para decodificar
-            }
+<head>
+    <title>Decodificador de Texto</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+    
+        h1 {
+            color: #333;
+        }
+    
+        form, #resultado, button {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: calc(100% - 22px);
+        }
+    
+        input[type="button"], button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    
+        input[type="button"]:hover, button:hover {
+            background-color: #0056b3;
+        }
+    
+        #resultado {
+            color: #333;
+        }
+    </style>
+</head>
 
-            function copiarTexto() {
-                var textoParaCopiar = document.getElementById("resultado").innerText;
-                navigator.clipboard.writeText(textoParaCopiar).then(function() {
-                    alert("Texto copiado com sucesso!");
-                }, function(err) {
-                    console.error('Erro ao copiar texto: ', err);
-                });
-            }
-        </script>
-        <footer>
-            <p> Raul H. 2024</p>
-        </footer>
-    </body>
+<body>
+    <header>
+        <img src="./Vector.png"
+            alt="Logo da empresa">
+    </header>
+
+    <h1>Decodificador de Texto</h1>
+    <form action="main.html" method="post">
+        <label for="text">Letras maiúsculas e caracteres especiais não serão aceitos!</label>
+        <br>
+        <label for="text">Digite seu texto:</label>
+        <input type="text" name="text" id="text" required>
+        <input type="button" value="Codificar" onclick="codificar()">
+        <input type="button" value="Decodificar" onclick="decodificar()">
+    </form>
+    <div id="resultado"></div>
+    <button onclick="copiarTexto()">Copiar</button>
+    <script>
+        function codificar() {
+            var texto = document.getElementById("text").value;
+            var textoCodificado = texto.split("").map(function (caractere) {
+                switch (caractere) {
+                    case 'e': return 'enter';
+                    case 'i': return 'imes';
+                    case 'a': return 'ai';
+                    case 'o': return 'ober';
+                    case 'u': return 'ufat';
+                    default: return caractere;
+                }
+            }).join("");
+
+            var div = document.getElementById("resultado");
+            div.innerHTML = "Texto codificado: " + textoCodificado;
+            div.style.backgroundColor = "lightblue"; // Alterando a cor de fundo para codificar
+        }
+
+        function decodificar() {
+            var texto = document.getElementById("text").value;
+            var textoDecodificado = "Texto decodificado: " + texto.split("").reverse().join("");
+            var div = document.getElementById("resultado");
+            div.innerHTML = textoDecodificado;
+            div.style.backgroundColor = "lightgreen"; // Alterando a cor de fundo para decodificar
+        }
+
+        function copiarTexto() {
+            var textoParaCopiar = document.getElementById("resultado").innerText;
+            navigator.clipboard.writeText(textoParaCopiar).then(function () {
+                alert("Texto copiado com sucesso!");
+            }, function (err) {
+                console.error('Erro ao copiar texto: ', err);
+            });
+        }
+    </script>
+    <footer>
+        <p> Raul H. 2024</p>
+    </footer>
+</body>
+
 </html>
