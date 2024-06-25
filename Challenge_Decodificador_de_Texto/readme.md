@@ -49,3 +49,6 @@ function copiarTexto() {
     });
 }
 ```
+
+### Oracle OCI
+- Maquina virtual hospendando o projeto:
