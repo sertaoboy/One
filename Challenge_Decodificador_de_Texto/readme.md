@@ -53,3 +53,6 @@ function copiarTexto() {
 ### Oracle OCI
 - Maquina virtual hospendando o projeto:
 ![OCI VM](https://github.com/sertaoboy/One/blob/main/Challenge_Decodificador_de_Texto/image.png?raw=true)
+
+### Acessando o projeto atraves do Apache Server na VM
+- Apache server com o projeto;
