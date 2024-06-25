@@ -56,3 +56,4 @@ function copiarTexto() {
 
 ### Acessando o projeto atraves do Apache Server na VM
 - Apache server com o projeto;
+![Apache Server] (https://github.com/sertaoboy/One/blob/main/Challenge_Decodificador_de_Texto/image2.png?raw=true)
