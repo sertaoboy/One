@@ -55,5 +55,5 @@ function copiarTexto() {
 ![OCI VM](https://github.com/sertaoboy/One/blob/main/Challenge_Decodificador_de_Texto/image.png?raw=true)
 
 ### Acessando o projeto atraves do Apache Server na VM
-- Apache server com o projeto;
-![Apache Server] (https://github.com/sertaoboy/One/blob/main/Challenge_Decodificador_de_Texto/image2.png?raw=true)
+- Apache server com o projeto:
+![Apache Server](https://github.com/sertaoboy/One/blob/main/Challenge_Decodificador_de_Texto/image2.png?raw=true)
